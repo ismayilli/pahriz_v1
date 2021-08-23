@@ -1,0 +1,68 @@
+body, html {
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.page-header-parent {
+    border-bottom: 1px solid #E3E6E5;
+}
+.page-header {
+    padding-top: $medium-margin;
+    padding-bottom: $medium-margin;
+}
+.page-header, .header-left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-navigation {
+    margin: 0 40px;
+}
+.header-navigation ul{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+.header-navigation ul li {
+    margin-right: $small-margin;
+}
+.header-navigation ul li:last-child {
+    margin-right: 0;
+}
+
+.header-auth__buttons .login-button {
+    margin-right: $medium-margin;
+    padding: $bp-small;
+    background-color: #D9E6E7;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.header-auth__buttons .register-button {
+    padding: $bp-small;
+    background-color: #43C0C3;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+}
+
+.page-footer {
+    width: 100%;
+    padding: 50px 0;
+}
+.page-footer__nav-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.page-footer__nav li {
+    margin-bottom: 10px;
+}
+.page-footer__nav a {
+    font-size: 16px;
+}
+.page-footer__first-row {
+    margin-bottom: 40px;
+}

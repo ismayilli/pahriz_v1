@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/admin/index}" xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+
+<div layout:fragment="content">
+    <div class="admin-profile-heading">
+        <h1 class="admin-crud-heading" th:text="${user.firstname}"></h1>
+        <p th:text="'@'+${user.username}"></p>
+    </div>
+    <form class="admin-form admin-profile-edit-form" th:action="@{/admin/profile}" method="post" th:object="${user}">
+        <div class="form-group">
+            <label for="username-field">Username</label>
+            <input id="username-field" class="form-control admin-input" type="text" th:field="*{username}" disabled>
+            <small>*You cannot change your username</small>
+        </div>
+        <div class="form-group">
+            <label for="firstname-field">First name</label>
+            <input id="firstname-field" class="form-control admin-input" type="text" th:field="*{firstname}">
+        </div>
+        <div class="form-group">
+            <label for="lastname-field">Last name</label>
+            <input id="lastname-field" class="form-control admin-input"  type="text" th:field="*{lastname}">
+        </div>
+        <button class="admin-update-button btn btn-success">Update</button>
+    </form>
+</div>
+
+</body>
+</html>

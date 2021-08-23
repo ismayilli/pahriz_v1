@@ -1,0 +1,20 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+// Modules
+@import "~bootstrap/scss/bootstrap";
+
+// Main
+@import "./base/Base";
+@import "./pages/Main";
+
+// Pages
+@import "./pages/Home";
+@import "./pages/Articles";
+@import "./pages/Recipes";
+@import "./pages/Foods";
+@import "./pages/Calculators";
+
+// Modules
+@import "./modules/Creator";
+@import "./modules/UserModal";

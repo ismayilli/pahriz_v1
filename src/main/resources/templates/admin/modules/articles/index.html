@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/admin/index}" xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+
+<div layout:fragment="content">
+    <h1 class="admin-crud-heading">Articles</h1>
+    <a class="admin-create-new btn btn-info" th:href="@{/admin/article/create}">Create new</a>
+    <table class="table admin-table articles-table">
+        <thead class="thead-dark">
+            <tr class="admin-table-heading">
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="admin-table-row" th:each="article: ${articles}">
+                <td th:text="${article.id}"></td>
+                <td th:text="${article.title}"></td>
+                <td>
+                    <a class="admin-action-button admin-view btn btn-primary" th:href="@{/admin/article/{id}(id=${article.id})}">View</a>
+                    <a class="admin-action-button admin-update btn btn-success" th:href="@{/admin/article/{id}/update(id=${article.id})}">Update</a>
+                    <a class="admin-action-button admin-delete btn btn-danger" onclick="return confirm('sure?');" th:href="@{/admin/article/{id}/delete(id=${article.id})}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

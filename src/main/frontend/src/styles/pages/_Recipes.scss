@@ -1,0 +1,43 @@
+.recipes-list-element {
+    position: relative;
+}
+.recipes-list-element__time {
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: coral;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    line-height: 1;
+}
+.recipes-list-element__time .small {
+    font-size: 12px;
+    display: block;
+}
+.recipes-list-element__image {
+    width: 100%;
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.recipes-list-element__title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+// Recipe Page
+.recipe-content__image {
+    width: 100%;
+}

@@ -1,0 +1,104 @@
+html,body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+a {
+    color: black;
+}
+a:hover {
+    text-decoration: none;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*App*/
+.admin-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #343a40;
+    width: 250px;
+    height: 100%;
+    padding: 20px 10px;
+    color: white;
+}
+.admin-nav li {
+
+}
+.admin-nav li a {
+    color: white;
+    padding: 10px;
+    display: block;
+    transition: 0.2s;
+    border-radius: 5px;
+}
+.admin-nav li a:hover {
+    background-color: grey;
+}
+.sidebar-heading {
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+.content-wrapper {
+    margin-left: 250px;
+}
+.admin-content {
+    padding: 20px;
+}
+.profile-button > a{
+    display: flex;
+    align-items: center;
+}
+.profile-button .image-wrapper {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+.profile-button .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.header-content {
+    padding: 20px;
+    background-color: #F7F7F0;
+    border-bottom: 1px solid #E0E7E8;
+}
+.header-content ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/*Admin Table*/
+.admin-form label {
+    font-weight: bold;
+}
+.admin-create-new {
+    margin-bottom: 20px;
+}
+.admin-crud-heading {
+    margin-bottom: 40px;
+}
+.admin-view-edit-button {
+    margin-bottom: 20px;
+}
+
+/*Admin Profile*/
+
+.admin-profile-heading {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.admin-profile-heading * {
+    margin: 0 !important;
+}
+.admin-profile-heading > h1 {
+    padding-right: 10px ;
+}

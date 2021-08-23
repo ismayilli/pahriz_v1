@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/admin/index}" xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+
+<div layout:fragment="content">
+    <h1 class="admin-crud-heading">Edit User</h1>
+    <form class="admin-form admin-update-form users-update-form" action="#" th:action="@{/admin/user/{id}/update(id=${user.id})}" th:object="${user}" method="post">
+        <div class="form-group">
+            <label for="username-field">Username</label>
+            <input id="username-field" class="form-control admin-input" type="text" th:field="*{username}">
+        </div>
+        <div class="form-group">
+            <label for="firstname-field">First name</label>
+            <input id="firstname-field" class="form-control admin-input" type="text" th:field="*{firstname}">
+        </div>
+        <div class="form-group">
+            <label for="lastname-field">Last name</label>
+            <input id="lastname-field" class="form-control admin-input"  type="text" th:field="*{lastname}">
+        </div>
+        <button class="admin-update-button btn btn-success">Update</button>
+    </form>
+</div>
+
+</body>
+</html>

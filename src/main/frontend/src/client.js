@@ -1,0 +1,1 @@
+const amk = "ueaj";

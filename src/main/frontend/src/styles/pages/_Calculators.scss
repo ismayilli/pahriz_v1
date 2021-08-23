@@ -1,0 +1,180 @@
+.calculators-navigation {
+    background-color: $lightgrey;
+    border: 1px solid $grey;
+    border-radius: 10px;
+    padding: 20px;
+}
+.calculators-navigation ul li {
+    margin-bottom: 10px;
+    transition: 0.2s;
+}
+.calculators-navigation ul li:hover {
+    padding-left: 5px;
+}
+.calculators-navigation ul li:last-child {
+    margin-bottom: none;
+}
+.calculators-navigation li a {
+    font-size: 18px;
+}
+.calculators-navigation__title {
+    margin-bottom: 30px;
+    border-left: 3px solid $blue-border;
+    padding-left: 10px;
+}
+
+.calculator-pattern {
+    padding: 20px;
+    border-radius: 10px;
+}
+.calculator-pattern__title {
+    color: white;
+    font-size: 36px;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+.calculator-form .form-element {
+    margin-bottom: 20px;
+}
+.calculator-form .form-element label, .calculator-form .form-element-radio label {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: black;
+    font-weight: 500;
+}
+.calculator-form .form-element label span, .calculator-form .form-element-radio label span {
+    font-size: 12px;
+    color: black;
+    opacity: 0.8;
+}
+.calculator-form .form-element input {
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+.calculator-form__error {
+    color: #C70039;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.form-element-radio__part {
+    display: inline-block;
+    text-align: left;
+    position: relative;
+    margin-right: 20px;
+}
+.form-element-radio__part input {
+    position: absolute;
+    opacity: 0;
+    z-index: 10;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+.form-element-radio__part .checkmark {
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    padding: 8px;
+    transition: 0.2s;
+}
+.form-element-radio__part input:checked ~ .checkmark, .form-element-radio__part input:hover ~ .checkmark {
+    background-color: $lightgrey;
+}
+.calculator-form__submit {
+    padding: 10px 45px;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: #2BC539;
+    color: white;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.calculator-result {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+}
+
+.calculator-result__box {
+    width: 100%;
+    padding: 30px 0;
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 20px;
+}
+.ideal-weight-box {
+    background-color: #19D50F;
+}
+.user-weight-box {
+    background-color: #0FD5D0;
+}
+.user-margin-box {
+    background-color: #D33F43;
+}
+.calculator-result__inputs {
+    margin-bottom: 40px;
+}
+.calculator-result__inputs__title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+.calculator-result__inputs__info {
+    font-size: 20px;
+    font-weight: 500;
+}
+.calculator-result__box .box__sub {
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+.calculator-result__box .box__title {
+    font-size: 36px;
+    font-weight: 700;
+}
+.calculator-result__box .box__title small {
+    font-size: 20px;
+}
+.calc-advice-box {
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 20px;
+}
+.calc-advice-box__title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-decoration: underline;
+    font-weight: 700;
+}
+.calc-advice-box__message {
+    font-size: 20px;
+}
+
+// Ideal Weight
+.ideal-weight-calculator {
+    background-color: #22C2C8;
+}
+
+// BMI
+.bmi-calculator {
+    background-color: #BF81CA;
+}
+.user-bmi-box.red {
+    background-color: #D33F43;
+}
+.user-bmi-box.green {
+    background-color: #19D50F;
+}

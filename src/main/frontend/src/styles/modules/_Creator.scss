@@ -1,0 +1,114 @@
+.meals-selector select, .meals-selector input {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 6px;
+    margin-bottom: 10px;
+}
+
+.meals-selector .action-button {
+    padding: 10px 0;
+    width: 100%;
+    background-color: #FF5733;
+    border-radius: 5px;
+    color: white;
+}
+
+.food-element-form .food-name {
+    padding: 5px 8px;
+}
+
+.food-element-form .food-amount {
+    padding: 5px 8px;
+}
+
+.food-element-form .food-amount-type {
+    
+}
+
+.meals-list .meal-element {
+    margin-bottom: 40px;
+}
+.meals-list .meal-element:last-child {
+    margin-bottom: 0;
+}
+.meal-element__title {
+    margin-bottom: 20px;
+}
+
+.creator-food-element-form {
+
+}
+.creator-food-element-form__default {
+    width: 100%;
+    align-items: center;
+}
+.creator-food-element-form__default__input {
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid $grey;
+    width: 100%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.creator-food-element-form__default__button {
+    font-weight: 600;
+    text-align: end;
+    cursor: pointer;
+}
+.creator-food-element__amount-selector, .creator-food-calorie, .creator-food-name {
+    border-radius: 5px;
+    border: 1px solid $grey;
+}
+.creator-food-element__amount-selector {
+    display: flex;
+    overflow: hidden;
+}
+.creator-food-name {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.creator-food-element__details {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.creator-food-name, .creator-food-element__details input, .creator-food-element__details select {
+    padding: 8px 12px;
+    font-size: 16px;
+}
+.creator-food-amount, .creator-food-amount-type {
+    border: none;
+}
+.creator-food-amount-type {
+    
+}
+.creator-food-amount {
+
+}
+.creator-food-calorie {
+    
+}
+.creator-food-element__symbol {
+    font-size: 20px;
+    margin: 0 10px;
+}
+.creator-add-food-button {
+    padding: 8px 25px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 2px solid #525252;
+    color: white;
+    background-color: $blue-border;
+    font-weight: 600;
+    margin-right: 10px;
+}
+.creator-food-element-form__cancel {
+    padding: 8px 15px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}

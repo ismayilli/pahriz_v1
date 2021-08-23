@@ -1,0 +1,26 @@
+.home-page {
+    background-color: $content-page-bg;
+}
+.home-page__header {
+    background-color: #70CDD7;
+    padding: 50px 0;
+}
+
+.home-page__header__action {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home-page__header__action__title {
+    font-size: 48px;
+    margin-bottom: 30px;
+}
+
+.home-page__header__image {
+    width: 100%;
+}
+
+.home-page__creator {
+    padding: 60px 0;
+}

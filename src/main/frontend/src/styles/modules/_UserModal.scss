@@ -1,0 +1,123 @@
+.auth-modal-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.auth-modal-back {
+    position: fixed;
+    background-color: black;
+    opacity: 0.3;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    animation: black-to-white 0.4s ease;
+}
+.auth-modal {
+    position: fixed;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    width: 70%;
+    z-index: 20;
+    animation: slide-up 0.4s ease;
+}
+.auth-modal__show {
+    background-color: #B579CC;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+.auth-modal__form-wrapper {
+    width: 50%;
+    padding: 50px;
+    position: relative;
+}
+.auth-modal-form {
+}
+.auth-modal-form__close {
+    position: absolute;
+    padding: 10px 15px;
+    top: 0;
+    right: 0;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.auth-modal-form__close:hover {
+    background-color: $lightgrey;
+}
+
+@keyframes black-to-white {
+    from {
+        background-color: black;
+        opacity: 0;
+    }
+    to {
+        background-color: black;
+        opacity: 0.3;
+    }
+}
+
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+//Login Register Form
+.login-register-form__title {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+.login-register-form input {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid $grey;
+    padding: 12px 16px;
+    font-size: 16px;
+}
+.login-register-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+.login-register-form__submit {
+    width: 100%;
+    padding: 16px 0;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: $blue-border;
+    color: white;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.social-login-register-button {
+    border-radius: 5px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 15px 0;
+    display: block;
+    text-align: center;
+}
+.social-user-fb-button {
+    background-color: $fb-blue;
+    color: white;
+}
+.social-user-google-button {
+    background-color: #E0E7E8;
+    color: $google-blue;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/admin/index}" xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+
+<div layout:fragment="content">
+    <h1 class="admin-crud-heading">Foods</h1>
+    <a class="admin-create-new btn btn-info" th:href="@{/admin/food/create}">Create new</a>
+    <table class="table admin-table foods-table">
+        <thead class="thead-dark">
+            <tr class="admin-table-heading">
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Unit</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="admin-table-row" th:each="food: ${foods}">
+                <td th:text="${food.id}"></td>
+                <td th:text="${food.name}"></td>
+                <td th:text="${food.unit}"></td>
+                <td>
+                    <a class="admin-action-button admin-view btn btn-primary" th:href="@{/admin/food/{id}(id=${food.id})}">View</a>
+                    <a class="admin-action-button admin-update btn btn-success" th:href="@{/admin/food/{id}/update(id=${food.id})}">Update</a>
+                    <a class="admin-action-button admin-delete btn btn-danger" onclick="return confirm('sure?');" th:href="@{/admin/food/{id}/delete(id=${food.id})}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/admin/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/admin/css/style.css}">
+    <script th:src="@{/admin/js/jquery-3.6.0.min.js}"></script>
+    <script th:src="@{/admin/js/bootstrap.min.js}"></script>
+    <script th:src="@{/admin/js/ckeditor/ckeditor.js}"></script>
+</head>
+<body>
+<div class="wrapper">
+
+    <aside class="admin-sidebar">
+        <div th:insert="/admin/fragments/sidebar"></div>
+    </aside>
+
+    <div class="content-wrapper">
+        <div class="header" th:insert="/admin/fragments/header"></div>
+        <div class="admin-content" layout:fragment="content"></div>
+    </div>
+</div>
+
+</body>
+</html>
