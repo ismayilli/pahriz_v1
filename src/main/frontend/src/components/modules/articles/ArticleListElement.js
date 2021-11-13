@@ -5,7 +5,7 @@ const ArticleListElement = (props) => {
     return (
         <div className="articles-list-element">
             <div className="articles-list-element__image" style={article_image}></div>
-            <h1>{props.article.title}</h1>
+            <h4 className="articles-list-element__title">{props.article.title}</h4>
         </div>
     )
 }

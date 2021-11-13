@@ -47,6 +47,9 @@ body, html {
     color: white;
     cursor: pointer;
 }
+.header-logo-img {
+    width: 200px;
+}
 
 .page-footer {
     width: 100%;
@@ -65,4 +68,7 @@ body, html {
 }
 .page-footer__first-row {
     margin-bottom: 40px;
+}
+.page-footer__brand__logo {
+    width: 150px;
 }

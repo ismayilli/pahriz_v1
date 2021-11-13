@@ -2,13 +2,19 @@ import React from 'react'
 import MealsSelector from '../modules/dietCreator/MealsSelector'
 import CreatorForm from '../modules/dietCreator/CreatorForm'
 import workout from '../../assets/images/workout.png';
+import setTitle from '../modules/_functions/setTitle';
 
 class Home extends React.Component {
     constructor(props) {
         super(props)
+        const essentials = {
+            title: 'Pahriz.com'
+        }
+
         this.state = {
             selected: false,
-            count: 0
+            count: 0,
+            title: setTitle(essentials.title)
         }
     }
     onSubmit = (mealsCount) => {

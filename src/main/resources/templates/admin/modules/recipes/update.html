@@ -5,14 +5,29 @@
 
 <div layout:fragment="content">
     <h1 class="admin-crud-heading">Edit Recipe</h1>
-    <form class="admin-form admin-update-form recipes-update-form" action="#" th:action="@{/admin/recipe/{id}/update(id=${recipe.id})}" th:object="${recipe}" method="post">
+    <form class="admin-form admin-update-form recipes-update-form" action="#" th:action="@{/admin/recipe/{id}/update(id=${recipe.id})}" th:object="${recipe}" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="title-field">Title</label>
             <input id="title-field" class="form-control admin-input" type="text" th:field="*{title}">
         </div>
         <div class="form-group">
+            <label>Category</label>
+            <select class="form-control" th:field="*{category}">
+                <option th:value="0" th:text="${'-- Select Category'}"></option>
+                <option th:each="category : ${recipeCategories}" th:value="${category.id}" th:text="${category.name}"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="duration-field">Cooking duration</label>
+            <input id="duration-field" class="form-control admin-input" type="text" th:field="*{duration}">
+        </div>
+        <div class="form-group">
             <label for="editor">Content</label>
             <textarea id="editor" name="content"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="imageFile-field">Image</label>
+            <input id="imageFile-field" class="form-control" type="file" name="imageFile" />
         </div>
         <button class="admin-update-button btn btn-success">Update</button>
     </form>

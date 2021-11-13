@@ -5,7 +5,7 @@
 
 <div layout:fragment="content" >
     <h1 class="admin-crud-heading">Edit Food</h1>
-    <form class="admin-form admin-update-form articles-update-form" action="#" th:action="@{/admin/food/{id}/update(id=${food.id})}" th:object="${food}" method="post">
+    <form class="admin-form admin-update-form articles-update-form" action="#" th:action="@{/admin/food/{id}/update(id=${food.id})}" th:object="${food}" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="name-field">Name</label>
             <input id="name-field" class="form-control admin-input" type="text" th:field="*{name}">
@@ -14,8 +14,91 @@
             <label for="unit-field">Unit</label>
             <input id="unit-field" class="form-control admin-input" type="text" th:field="*{unit}">
         </div>
+        <div class="form-group">
+            <label for="editor">Content</label>
+            <textarea id="editor" name="content" th:text="${food.content}"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Category</label>
+            <select class="form-control" th:field="*{category}">
+                <option th:value="0" th:text="${'-- Select Category'}"></option>
+                <option th:each="category : ${foodCategories}" th:value="${category.id}" th:text="${category.name}"></option>
+            </select>
+        </div>
+        <label>Nutritions</label>
+        <div th:attr="data-num=${#lists.size(food.nutritions)}" id="nutrition-inputs-list" class="form-group">
+            <span class="food-add-button btn btn-info" onclick="addNutrition()" id="add-nutrition">+</span>
+            <span class="food-remove-button btn btn-danger" onclick="deleteParent(this)">-</span>
+            <div th:each="nutrition, itemStat : *{nutritions}" th:attr="data-num=${__itemStat.index__}" class="nutrition-inputs-group">
+                <input placeholder="Nutrition name" class="form-control admin-input admin-mini-input" type="text" th:field="*{nutritions[__${itemStat.index}__].name}">
+                <input placeholder="Nutrition value" class="form-control admin-input admin-mini-input" type="number" th:field="*{nutritions[__${itemStat.index}__].value}">
+            </div>
+        </div>
+        <label>Serves</label>
+        <div th:attr="data-num=${#lists.size(food.serves)}" id="serve-inputs-list" class="form-group">
+            <span class="food-add-button btn btn-info" onclick="addServe()" id="add-serve">+</span>
+            <span class="food-remove-button btn btn-danger" onclick="deleteParent(this)">-</span>
+            <div th:each="serve, itemStat : *{serves}" th:attr="data-num=${__itemStat.index__}" class="serve-inputs-group">
+                <input placeholder="Serve name" class="form-control admin-input admin-mini-input" type="text" th:field="*{serves[__${itemStat.index}__].name}">
+                <input placeholder="Serve value" class="form-control admin-input admin-mini-input" type="number" th:field="*{serves[__${itemStat.index}__].value}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="imageFile-field">Image</label>
+            <input id="imageFile-field" class="form-control" type="file" name="imageFile" />
+        </div>
         <button class="admin-update-button btn btn-success">Update</button>
     </form>
+
+    <script th:inline="javascript">
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .then( editor => {
+                console.log( editor );
+            } )
+            .catch( error => {
+                console.error( error );
+            } );
+
+        async function addNutrition() {
+            const list = document.getElementById('nutrition-inputs-list');
+            const buttonParent = document.getElementById('add-nutrition').parentNode;
+            const nextNum = buttonParent.dataset.num;
+
+            let url = "http://localhost:8080/admin/api/food/getNutrition/"+nextNum;
+            let response = await fetch(url);
+            let data = await response.text();
+
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(data, 'text/html');
+
+            list.insertBefore(doc.documentElement,list.childNodes[nextNum+2]);
+            buttonParent.dataset.num = parseInt(nextNum)+1;
+        }
+
+        async function addServe() {
+            const list = document.getElementById('serve-inputs-list');
+            const buttonParent = document.getElementById('add-serve').parentNode;
+            const nextNum = buttonParent.dataset.num;
+
+            let url = "http://localhost:8080/admin/api/food/getServe/"+nextNum;
+            let response = await fetch(url);
+            let data = await response.text();
+
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(data, 'text/html');
+
+            list.insertBefore(doc.documentElement,list.childNodes[nextNum+2]);
+            buttonParent.dataset.num = parseInt(nextNum)+1;
+        }
+
+        function deleteParent(e) {
+            if(e.parentNode.dataset.num>1) {
+                e.parentNode.removeChild(e.parentNode.lastElementChild);
+                e.parentNode.dataset.num = parseInt(e.parentNode.dataset.num)-1;
+            }
+        }
+    </script>
 </div>
 
 </body>

@@ -20,13 +20,14 @@ const ArticlesFilter = (props) => {
     return (
         <div className="articles-filter">
             <form onSubmit={handleSubmit} className="articles-filter__form">
-                <input placeholder="Axtaris ucun soz yazin" onChange={handleSearchChange} className="articles-filter__search__input"/>
+                <input placeholder="Axtarış üçün söz yazın..." onChange={handleSearchChange} className="articles-filter__search__input"/>
                 <select onChange={handleCategoryChange} className="articles-filter__category__select">
-                    <option value={1}>Butun kateqoriyalar</option>
-                    <option value={2}>Saglamliq</option>
-                    <option value={3}>Heyat</option>
+                    <option value={0}>Bütün kateqoriyalar</option>
+                    {props.categories.map((category)=>{
+                        return <option key={category.id} value={category.id}>{category.name}</option>
+                    })}
                 </select>
-                <button className="articles-filter__button">search</button>
+                <button className="articles-filter__button">Filtrlə</button>
             </form>
         </div>
     )

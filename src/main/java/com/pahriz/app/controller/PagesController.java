@@ -13,4 +13,9 @@ public class PagesController {
         return "index";
     }
 
+//    @RequestMapping(value = "/{path:[^\\.]*}")
+//    public String redirect() {
+//        return "forward:/";
+//    }
+
 }

@@ -1,0 +1,4 @@
+<div th:attr="data-num=${__num__}">
+    <input class="form-control admin-input admin-mini-input" placeholder="Serve name" type="text" th:attr="name=${'serves['+__num__+'].name'}">
+    <input class="form-control admin-input admin-mini-input" placeholder="Serve value" type="number" th:attr="name=${'serves['+__num__+'].value'}">
+</div>

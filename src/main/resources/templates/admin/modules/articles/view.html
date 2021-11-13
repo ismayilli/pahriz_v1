@@ -15,8 +15,16 @@
             <td th:text="${article.title}"></td>
         </tr>
         <tr>
+            <th>Created</th>
+            <td th:text="${article.created_at}"></td>
+        </tr>
+        <tr>
+            <th>Last Updated</th>
+            <td th:text="${article.updated_at}"></td>
+        </tr>
+        <tr>
             <th>Content</th>
-            <td th:text="${article.content}"></td>
+            <td th:utext="${article.content}"></td>
         </tr>
     </table>
 </div>

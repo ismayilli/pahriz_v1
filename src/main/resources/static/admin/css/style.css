@@ -79,7 +79,7 @@ ul {
 .admin-form label {
     font-weight: bold;
 }
-.admin-create-new {
+.admin-create-new, .admin-additional-button {
     margin-bottom: 20px;
 }
 .admin-crud-heading {
@@ -101,4 +101,15 @@ ul {
 }
 .admin-profile-heading > h1 {
     padding-right: 10px ;
+}
+
+.admin-mini-input {
+    display: inline-block;
+    width: 150px;
+    margin-bottom: 10px;
+}
+.food-add-button, .food-remove-button {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: white;
 }

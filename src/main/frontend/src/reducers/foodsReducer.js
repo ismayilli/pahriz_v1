@@ -1,5 +1,5 @@
 const foodsInitialState = [
-    {foodName:"isa", serveAmount: 200, amountType: "gram"}
+    {}
 ]
 
 export const foodsReducer = (state = foodsInitialState, action) => {
@@ -9,8 +9,26 @@ export const foodsReducer = (state = foodsInitialState, action) => {
                 ...state,
                 action.food
             ]
+        case 'UPDATE_FOOD':
+            const updateIndex = state.findIndex((food)=> food.id == action.id);
+            const updatedFoods = [...state];
+            if(updateIndex !== -1) {
+                updatedFoods[updateIndex].calorie = action.calorie;
+            }
+            //console.log(updatedFoods);
+            return [
+                ...updatedFoods
+            ]
         case 'REMOVE_FOOD':
-            return state
+            const removeIndex = state.findIndex((food)=> food.id == action.id);
+            const removedFoods = [...state];
+            if(removeIndex !== -1) {
+                removedFoods.splice(removeIndex,1);
+            }
+            //console.log(updatedFoods);
+            return [
+                ...removedFoods
+            ]
         default:
             return state
     }

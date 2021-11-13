@@ -1,9 +1,12 @@
 import {useState} from 'react';
 import maleImage from "../../../assets/images/boy.png";
 import femaleImage from "../../../assets/images/female.png";
+import setTitle from '../_functions/setTitle';
 
 const BMICalculator = () => {
-    document.title = "Calculate your BMI";
+    const essentials = {
+        title: setTitle("Calculate your BMI")
+    }
 
     const resultPlaceHolder = {msg:"",human: {weight:"",height:"",gender:""}};
 

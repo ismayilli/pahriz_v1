@@ -15,24 +15,30 @@
     "@babel/plugin-proposal-decorators": "^7.12.13",
     "@babel/plugin-transform-react-jsx": "^7.12.17",
     "@babel/plugin-transform-runtime": "^7.13.10",
+    "@ckeditor/ckeditor5-upload": "^31.0.0",
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "bootstrap": "^4.5.3",
-    "css-loader": "^5.0.2",
+    "css-loader": "5.2.7",
     "file-loader": "^6.2.0",
-    "node-sass": "4.14.1",
+    "html-react-parser": "^1.2.8",
+    "node-sass": "6.0.1",
     "react": "^16.5.2",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^16.5.2",
     "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "react-to-print": "^2.13.0",
     "redux": "^4.0.5",
     "rest": "^1.3.1",
-    "sass-loader": "10.1.1",
+    "sass-loader": "10.2.0",
     "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^5.2.3",
     "url-loader": "^4.1.1",
+    "uuid": "^8.3.2",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
@@ -49,7 +55,9 @@
   },
   "babel": {
     "plugins": [
-      ["@babel/transform-runtime"]
+      [
+        "@babel/transform-runtime"
+      ]
     ]
   }
 }

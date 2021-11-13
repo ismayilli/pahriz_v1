@@ -3,6 +3,11 @@ package com.pahriz.app.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import javax.annotation.processing.Generated;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Document(collection = "foods")
 public class Food {
@@ -10,15 +15,23 @@ public class Food {
     @Id
     private String id;
 
-    private int category_id;
-
     private String name;
 
-    private String image;
+    private URL image;
 
     private int unit;
 
-    public Food() {}
+    private String content;
+
+    private List<Nutrition> nutritions;
+
+    private List<Nutrition> serves;
+
+    private FoodCategory category;
+
+    public Food() {
+
+    }
 
     public String getId() {
         return id;
@@ -26,14 +39,6 @@ public class Food {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public int getCategory_id() {
-        return category_id;
-    }
-
-    public void setCategory_id(int category_id) {
-        this.category_id = category_id;
     }
 
     public String getName() {
@@ -44,11 +49,11 @@ public class Food {
         this.name = name;
     }
 
-    public String getImage() {
+    public URL getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(URL image) {
         this.image = image;
     }
 
@@ -60,8 +65,39 @@ public class Food {
         this.unit = unit;
     }
 
-    public Food(int category_id, String name, String image, int unit) {
-        this.category_id = category_id;
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public List<Nutrition> getNutritions() {
+        return nutritions;
+    }
+
+    public void setNutritions(List<Nutrition> nutritions) {
+        this.nutritions = nutritions;
+    }
+
+    public List<Nutrition> getServes() {
+        return serves;
+    }
+
+    public void setServes(List<Nutrition> serves) {
+        this.serves = serves;
+    }
+
+    public FoodCategory getCategory() {
+        return category;
+    }
+
+    public void setCategory(FoodCategory category) {
+        this.category = category;
+    }
+
+    public Food(int category_id, String name, URL image, int unit) {
         this.name = name;
         this.image = image;
         this.unit = unit;

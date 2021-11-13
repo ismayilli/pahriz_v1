@@ -3,6 +3,9 @@ package com.pahriz.app.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.net.URL;
+import java.util.Date;
+
 @Document(collection = "articles")
 public class Article {
 
@@ -11,15 +14,21 @@ public class Article {
 
     private String title;
 
-    private String image;
+    private URL image;
+
+    private ArticleCategory category;
 
     private String content;
 
-    public String getImage() {
+    private Date created_at;
+
+    private Date updated_at;
+
+    public URL getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(URL image) {
         this.image = image;
     }
 
@@ -39,12 +48,36 @@ public class Article {
         this.title = title;
     }
 
+    public ArticleCategory getCategory() {
+        return category;
+    }
+
+    public void setCategory(ArticleCategory category) {
+        this.category = category;
+    }
+
     public String getContent() {
         return content;
     }
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public Date getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(Date created_at) {
+        this.created_at = created_at;
+    }
+
+    public Date getUpdated_at() {
+        return updated_at;
+    }
+
+    public void setUpdated_at(Date updated_at) {
+        this.updated_at = updated_at;
     }
 
     @Override

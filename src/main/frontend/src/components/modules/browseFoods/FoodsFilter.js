@@ -3,7 +3,7 @@ import { useState } from "react"
 const FoodsFilter = (props) => {
     const [categoryFilter, setCategoryFilter] = useState([])
     function handleChange(e) {
-        const category = parseInt(e.target.dataset.id);
+        const category = e.target.dataset.id;
         const categories = categoryFilter;
         if(e.target.checked) {
             categories.push(category);

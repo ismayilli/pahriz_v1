@@ -2,26 +2,32 @@ import React, { useEffect, useState } from 'react';
 import FoodsList from '../modules/browseFoods/FoodsList'
 import FoodsSearch from '../modules/browseFoods/FoodsSearch'
 import FoodsFilter from '../modules/browseFoods/FoodsFilter'
-import {foodsCategories} from '../exampleData';
-import {applyCategoryAction, applySearchAction} from '../../actions/browseFoodsActions'
-import { connect } from 'react-redux';
+import setTitle from '../modules/_functions/setTitle';
 
 class Foods extends React.Component {
     constructor(props) {
         super(props);
+        const essentials = {
+            title: 'Browse Foods'
+        }
+
         this.state = {
             foodsLoading: true,
             foods: [],
             filters: {
                 categories: [],
                 search: ''
-            }
+            },
+            foodCategoriesLoading: true,
+            foodCategories: [],
+            title: setTitle(essentials.title)
         }
         this.applyCategory = this.applyCategory.bind(this);
         this.applySearch = this.applySearch.bind(this);
     }
     componentDidMount() {
         this.fetchFoods();
+        this.fetchCategories();
     };
     async fetchFoods() {
         this.setState(()=> ({
@@ -33,13 +39,29 @@ class Foods extends React.Component {
         let data = await response.json();
 
         const filteredFoods = data.filter((food) => {
+            console.log(food);
             const searchFilter = (this.state.filters.search) ? food.name.toLowerCase().indexOf(this.state.filters.search) > -1 : true;
-            const categoryFilter = (this.state.filters.categories !== undefined && this.state.filters.categories.length > 0) ? this.state.filters.categories.includes(food.category_id) : true;
+            const categoryFilter = (this.state.filters.categories !== undefined && this.state.filters.categories.length > 0) ? this.state.filters.categories.includes(food.category.id) : true;
             return searchFilter && categoryFilter;
         })
         this.setState(()=>({
             foods: filteredFoods,
             foodsLoading: false
+        }))
+    }
+    async fetchCategories() {
+        this.setState(()=> ({
+            foodCategoriesLoading: true
+        }))
+
+        let url = "http://localhost:8080/api/getAllFoodCategories";
+        let response = await fetch(url);
+        let data = await response.json();
+
+
+        this.setState(()=>({
+            foodCategories: data,
+            foodsCategoriesLoading: false
         }))
     }
     applySearch(searchValue) {
@@ -58,6 +80,7 @@ class Foods extends React.Component {
                 categories: categoriesList
             }
         }));
+        console.log(categoriesList);
         this.fetchFoods();
     }
     render() {
@@ -71,7 +94,7 @@ class Foods extends React.Component {
                             {!this.state.foodsLoading && <FoodsList foodsList={this.state.foods}/>}
                         </div>
                         <div className="col-md-3 offset-md-1">
-                            <FoodsFilter categories={foodsCategories} applyCategory={this.applyCategory}/>
+                            <FoodsFilter categories={this.state.foodCategories} applyCategory={this.applyCategory}/>
                         </div>
                     </div>
                 </div>

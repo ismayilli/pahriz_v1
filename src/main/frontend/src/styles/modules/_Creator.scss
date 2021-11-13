@@ -1,9 +1,14 @@
 .meals-selector select, .meals-selector input {
-    width: 100%;
-    border: none;
+    font-size: 28px;
+    font-weight: 500;
+    border: 1px solid lightgray;
     border-radius: 5px;
     padding: 10px 6px;
     margin-bottom: 10px;
+}
+.meals-selector input {
+    font-size: 20px;
+    width: 100%;
 }
 
 .meals-selector .action-button {
@@ -32,8 +37,26 @@
 .meals-list .meal-element:last-child {
     margin-bottom: 0;
 }
-.meal-element__title {
-    margin-bottom: 20px;
+.meal-element__title__input {
+    width: 100%;
+    font-size: 28px;
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 6px 10px 6px 0px;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 3px;
+    transition: 0.3s;
+}
+.meal-element__title__input:focus {
+    background-color: white;
+    border: 1px solid grey;
+    padding-left: 10px;
+}
+.meal-element__subsmall {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
 }
 
 .creator-food-element-form {
@@ -111,4 +134,63 @@
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
+}
+
+//Creator Actions
+.creator-actions-print-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #59C2B9;
+    color: white;
+    font-weight: 500;
+    font-size: 22px;
+    border-radius: 10px;
+}
+.creator-actions-info-title {
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #4CA826;
+}
+.creator-actions-info-calorie {
+    font-weight: 700;
+    font-size: 40px;
+    border: 1px solid grey;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+// List Element
+.list-element-creator-parent {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.list-element-creator-parent .browse-foods-list-element  {
+    transition: 0.2s;
+    width: 100%;
+    margin-bottom: 0;
+}
+.list-element-creator-parent .list-element-remover {
+    opacity: 0;
+    width: 0;
+    font-weight: 600;
+    font-size: 22px;
+    display: inline-flex;
+    align-items: center; 
+    background-color: red;
+    border-radius: 10px;
+    color: white;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.list-element-creator-parent:hover .browse-foods-list-element  {
+    
+}
+.list-element-creator-parent:hover .list-element-remover {
+    width: auto;
+    opacity: 1;
+    margin-left: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
 }

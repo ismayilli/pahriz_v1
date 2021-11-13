@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/admin/index}" xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+
+<div layout:fragment="content">
+    <a th:href="@{/admin/article-category/{id}/update(id=${articleCategory.id})}" class="admin-view-edit-button btn btn-info">Edit Article Category</a>
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <td th:text="${articleCategory.id}"></td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td th:text="${articleCategory.name}"></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

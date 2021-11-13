@@ -45,9 +45,14 @@ class FoodElementForm extends React.Component {
         }))
         if(value.trim().length > 2) {
             this.setState(()=> ({
-                foodsLoading: true
+                foodsLoading: true,
             }))
             this.fetchFoodsByName(value);
+        }
+        else {
+            this.setState(()=> ({
+                foodsSuggestions: []
+            }))
         }
     }
     async fetchFoodsByName(name) {
@@ -55,8 +60,11 @@ class FoodElementForm extends React.Component {
         let response = await fetch(url);
         let data = await response.json();
 
-        this.setState({foodsSuggestions: data})
-        //console.log(this.state.foodsSuggestions)
+        this.setState(()=>({
+            foodsSuggestions: data
+        }))
+
+        //console.log(this.state.foodsSuggestions);
     }
     handleAddingFood = (e) => {
         e.preventDefault()
@@ -67,6 +75,7 @@ class FoodElementForm extends React.Component {
             foodName: this.state.foodName,
             serveAmount: this.state.serveAmount,
             amountType: selectValue,
+            amountValue: this.state.calorie/this.state.serveAmount,
             calorie: this.state.calorie
         })
 
@@ -75,17 +84,39 @@ class FoodElementForm extends React.Component {
             custom: false
         }))
     }
+    handleAddingFoodFromDB = (e) => {
+        const food = this.state.foodsSuggestions.find((item)=>{
+            return item.id == e.target.dataset.id;
+        })
+
+        this.props.onSubmit({
+            mealId: this.props.mealId,
+            foodName: food.name,
+            serveAmount: 1,
+            amountType: food.serves[0].name,
+            amountValue: food.serves[0].value,
+            calorie: food.unit * food.serves[0].value,
+            image: food.image
+        })
+
+        this.setState(()=>({
+            foodDB: '',
+            foodsSuggestions: []
+        }))
+    }
     render() {
         return (
             <div className="creator-food-element-form">
                 {!this.state.custom && (
                     <div className="creator-food-element-form__default">
                         <input value={this.state.foodDB} onChange={this.handleFindingFood} type="text" className="creator-food-element-form__default__input" placeholder="Yeməyin adını yazın" />
-                        {this.state.foodsLoading && 
+                        {this.state.foodsSuggestions.length > 0 && 
                             <div className="foods-suggestions-box">
                                 <ul>
                                 {this.state.foodsSuggestions.map((food)=>{
-                                    <li>{food.name}</li>
+                                    return (
+                                        <li key={food.id}><a data-id={food.id} onClick={this.handleAddingFoodFromDB}>{food.name}</a></li>
+                                    )
                                 })}
                                 </ul>
                             </div>

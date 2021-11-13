@@ -3,8 +3,13 @@ import CalculatorsList from '../modules/calculator/CalculatorsList'
 import IWCalculator from '../modules/calculator/IWCalculator'
 import BMICalculator from '../modules/calculator/BMICalculator'
 import NotFound from '../pages/NotFound'
+import setTitle from '../modules/_functions/setTitle'
 
 const Calculators = ({match}) => {
+    const essentials = {
+        title: setTitle('Calculators')
+    }
+
     return (
         <div className="calculators-page content-page">
             <div className="container">

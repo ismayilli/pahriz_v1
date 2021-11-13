@@ -7,7 +7,7 @@ const ArticleList = (props) => {
             <div className="row">
                 {props.articles.map((article) => {
                     return (
-                        <div className="col-md-4">
+                        <div key={article.id} className="col-md-4">
                             <Link to={`/article/${article.id}`}><ArticleListElement key={article.id} article={article} /></Link>
                         </div>
                     )

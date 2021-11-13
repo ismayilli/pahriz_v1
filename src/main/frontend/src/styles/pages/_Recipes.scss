@@ -33,11 +33,52 @@
 }
 
 .recipes-list-element__title {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
 }
 
-// Recipe Page
+//Recipe Content
+.recipe-content__title {
+    font-weight: 600;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+.recipe-content__header {
+    margin-bottom: 30px;
+}
+.recipe-content__header__category {
+    background-color: #71C259;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
 .recipe-content__image {
     width: 100%;
+    margin-bottom: 20px;
+}
+.recipe-content__image__itself {
+    width: 100%;
+}
+.recipe-content__duration__parent {
+    margin-bottom: 30px;
+}
+.recipe-content__duration {
+    background-color: #56B7B8;
+    color: white;
+    padding: 20px;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+}
+.recipe-content__duration i {
+    font-size: 30px;
+    font-weight: 500;
+    margin-right: 20px;
+}
+.recipe-content__duration small {
+    font-size: 14px;
+}
+.recipe-content__duration strong {
+    font-size: 24px;
 }

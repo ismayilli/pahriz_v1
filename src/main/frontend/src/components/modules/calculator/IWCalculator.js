@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import maleImage from "../../../assets/images/boy.png";
 import femaleImage from "../../../assets/images/female.png";
+import setTitle from "../_functions/setTitle";
 
 const IWCalculator = () => {
-    document.title = "Calculate your ideal weight";
+    const essentials = {
+        title: setTitle("Calculate your ideal weight")
+    }
 
     const resultPlaceHolder = {msg:"",human: {weight:"",height:"",gender:"",margin:""}};
 

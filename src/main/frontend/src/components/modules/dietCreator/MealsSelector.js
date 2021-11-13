@@ -32,13 +32,13 @@ class MealsSelector extends React.Component {
         return (
             <div className="meals-selector">
                 <form onSubmit={this.onSubmit}>
-                    <select className="meals-selector__select"  onChange={this.handleChange} name="mealsCountSelect">
-                        <option value="2">İki</option>
-                        <option value="3">Üç</option>
-                        <option value="5">Beş</option>
+                    <select defaultValue="3" className="meals-selector__select"  onChange={this.handleChange} name="mealsCountSelect">
+                        <option value="2">2 Öyün</option>
+                        <option value="3">3 Öyün</option>
+                        <option value="5">5 Öyün</option>
                         <option value="0">Özün Seç</option>
                     </select>
-                    {this.state.customSelect && <input className="meals-selector__custom" placeholder="Günlük ne yemək sayını yazın" name="mealsCountCustom"/>}
+                    {this.state.customSelect && <input className="meals-selector__custom" type="number" placeholder="Günlük öyün sayını yazın" name="mealsCountCustom"/>}
                     <button className="action-button">{!this.state.submitted ? 'Yarat' : 'Yenidən Yarat'}</button>
                 </form>
             </div>

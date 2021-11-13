@@ -111,7 +111,7 @@
     padding: 50px 20px 20px 20px;
     border-radius: 10px;
     overflow: hidden;
-    background-color: #FF5065;
+    background-color: #384359;
 }
 .food-page__header__image {
     width: 80px;
@@ -130,9 +130,55 @@
     height: 100%;
     object-fit: cover;
 }
+.food-page__calorie {
+    background-color: #FF5065;
+    color: white;
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.food-page__calorie__title {
+    font-weight: 600;
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-decoration: underline;
+}
+.food-page__serveSelector {
+    margin-bottom: 30px;
+}
+.food-page__serveSelector__amount, .food-page__serveSelector__serve {
+    background-color: transparent;
+    border: 3px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.food-page__serveSelector__amount {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 10px;
+    width: 150px;
+}
+.food-page__serveSelector__serve {
+
+}
+.food-page__calorie__display__value {
+    font-size: 36px;
+    font-weight: 600;
+}
 .food-page__info {
     background-color: white;
     padding: 20px;
     font-size: 16px;
     border-radius: 10px;
+}
+.food-page__info h1, .food-page__info h2, .food-page__info h3, .food-page__info h4, .food-page__info h5, .food-page__info h6 {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+.food-page__info p {
+    font-size: 18px;
+    line-height: 1.8;
 }

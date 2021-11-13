@@ -1,0 +1,4 @@
+<div th:fragment="nutritions" th:attr="data-num=${__num__}">
+    <input class="form-control admin-input admin-mini-input" placeholder="Nutrition name" type="text" th:attr="name=${'nutritions['+__num__+'].name'}">
+    <input class="form-control admin-input admin-mini-input" placeholder="Nutrition value" type="number" th:attr="name=${'nutritions['+__num__+'].value'}">
+</div>

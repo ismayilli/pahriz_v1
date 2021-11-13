@@ -1,13 +1,17 @@
 import {Link} from 'react-router-dom';
 
 const Footer = () => {
+    const essentials = {
+        logo_url: "https://pahrizcdn.s3.eu-central-1.amazonaws.com/assets/pahriz_logo.png"
+    }
+
     return (
         <div className="page-footer">
             <div className="container">
                 <div className="row page-footer__first-row">
                     <div className="col-md-6">
                         <div className="page-footer__brand">
-                            <h2 className="page-footer__brand__logo">Pahriz</h2>
+                            <h2 ><img className="page-footer__brand__logo" src={essentials.logo_url} /></h2>
                         </div>
                     </div>
                     <div className="col-md-3">

@@ -5,14 +5,25 @@
 
 <div layout:fragment="content">
     <h1 class="admin-crud-heading">Edit Article</h1>
-    <form class="admin-form admin-update-form articles-update-form" action="#" th:action="@{/admin/article/{id}/update(id=${article.id})}" th:object="${article}" method="post">
+    <form class="admin-form admin-update-form articles-update-form" action="#" th:action="@{/admin/article/{id}/update(id=${article.id})}" th:object="${article}" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="title-field">Title</label>
             <input id="title-field" class="form-control admin-input" type="text" th:field="*{title}">
         </div>
         <div class="form-group">
+            <label>Category</label>
+            <select class="form-control" th:field="*{category}">
+                <option th:value="0" th:text="${'-- Select Category'}"></option>
+                <option th:each="category : ${articleCategories}" th:value="${category.id}" th:text="${category.name}"></option>
+            </select>
+        </div>
+        <div class="form-group">
             <label for="editor"></label>
             <textarea id="editor" name="content" th:text="${article.content}"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="imageFile-field">Image</label>
+            <input id="imageFile-field" class="form-control" type="file" name="imageFile" />
         </div>
         <button class="admin-update-button btn btn-success">Update</button>
     </form>

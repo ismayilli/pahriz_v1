@@ -1,5 +1,4 @@
 const client = require('./client');
-console.log(client);
 
 import React from 'react';
 import ReactDOM from 'react-dom';

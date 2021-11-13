@@ -1,14 +1,20 @@
 import React from 'react'
 import RecipeContent from '../modules/recipes/RecipeContent'
 import NotFound from '../pages/NotFound'
+import setTitle from '../modules/_functions/setTitle'
 
 class Recipe extends React.Component {
     constructor(props) {
         super(props)
+        const essentials = {
+            title: 'Pahriz.com'
+        }
+
         this.state = {
             recipeContent: {},
             recipeExists: true,
-            recipeId: this.props.match.params.id
+            recipeId: this.props.match.params.id,
+            title: setTitle(essentials.title)
         }
     }
     componentDidMount() {
@@ -25,7 +31,8 @@ class Recipe extends React.Component {
         let data = await response.json();
 
         this.setState(() => ({
-            recipeContent: data
+            recipeContent: data,
+            title: setTitle(data.title)
         }))
     }
     render() {

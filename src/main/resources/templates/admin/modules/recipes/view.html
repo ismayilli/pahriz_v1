@@ -15,8 +15,20 @@
             <td th:text="${recipe.title}"></td>
         </tr>
         <tr>
+            <th>Duration</th>
+            <td th:text="${recipe.duration}"></td>
+        </tr>
+        <tr>
+            <th>Created</th>
+            <td th:text="${recipe.created_at}"></td>
+        </tr>
+        <tr>
+            <th>Last Updated</th>
+            <td th:text="${recipe.updated_at}"></td>
+        </tr>
+        <tr>
             <th>Content</th>
-            <td th:text="${recipe.content}"></td>
+            <td th:utext="${recipe.content}"></td>
         </tr>
     </table>
 </div>

@@ -2,11 +2,12 @@ import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 
 const FoodListElement = (props) => {
+    const servesPlaceholder = [{name:'qram',value: 1}]
+
     const [calorie, setCalorie] = useState(props.food.unit);
     const [portion, setPortion] = useState(0);
     const [amount, setAmount] = useState((props.food.amount == undefined) ? 1 : props.food.amount);
-    const examplePortions = [{id:1,name: "ədəd",value: 10},{id:2,name: "qram",value: 1},{id:3,name: "porsiya",value: 20}];
-    const [values, setValues] = useState((!props.food.fromCreator) ? examplePortions : props.food.values);
+    const [values, setValues] = useState((!props.food.fromCreator) ? (props.food.serves[0].name ? props.food.serves : servesPlaceholder) : props.food.values);
     useEffect(() => {
         setMainCalorie();
     })
@@ -38,7 +39,7 @@ const FoodListElement = (props) => {
                         <select onChange={handlePortionChange}>
                             {values.map((key,index) => {
                                 return (
-                                    <option key={key.id} value={index} >{key.name}</option>
+                                    <option key={key.name} value={index} >{key.name}</option>
                                 )
                             })}
                         </select>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/admin/index}" xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+
+<div layout:fragment="content" >
+    <h1 class="admin-crud-heading">Edit Article Category</h1>
+    <form class="admin-form admin-update-form article-category-update-form" th:action="@{/admin/article-category/{id}/update(id=${articleCategory.id})}" th:object="${articleCategory}" method="post">
+        <div class="form-group">
+            <label for="name-field">Name</label>
+            <input id="name-field" class="form-control admin-input" type="text" th:field="*{name}">
+        </div>
+        <button class="admin-update-button btn btn-success">Update</button>
+    </form>
+
+
+</div>
+
+</body>
+</html>
