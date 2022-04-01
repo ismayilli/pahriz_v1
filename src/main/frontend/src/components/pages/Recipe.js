@@ -26,7 +26,7 @@ class Recipe extends React.Component {
         else this.setState({recipeContent})
     }
     async fetchRecipe() {
-        let url = "http://localhost:8080/api/recipe/"+this.state.recipeId;
+        let url = "/api/recipe/"+this.state.recipeId;
         let response = await fetch(url);
         let data = await response.json();
 

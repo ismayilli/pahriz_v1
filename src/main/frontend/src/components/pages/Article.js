@@ -37,7 +37,7 @@ class Article extends React.Component {
         }
     }
     async fetchArticle(articleId = this.state.articleId) {
-        let url = "http://localhost:8080/api/article/"+articleId;
+        let url = "/api/article/"+articleId;
         let response = await fetch(url);
         let data = await response.json();
 

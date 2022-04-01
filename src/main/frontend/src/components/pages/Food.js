@@ -26,7 +26,7 @@ class Food extends React.Component {
             foodLoading: true
         }))
 
-        let url = "http://localhost:8080/api/food/"+this.state.foodId;
+        let url = "/api/food/"+this.state.foodId;
         let response = await fetch(url);
         let data = await response.json();
 

@@ -40,7 +40,7 @@ const BMICalculator = () => {
     }
     function fetchResult() {
         setResultLoading(true);
-        fetch("http://localhost:8080/api/getBMIResult?" + new URLSearchParams({
+        fetch("/api/getBMIResult?" + new URLSearchParams({
             weight: weight,
             height: height,
             gender: gender

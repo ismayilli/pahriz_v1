@@ -40,7 +40,7 @@ const IWCalculator = () => {
     }
     function fetchResult() {
         setResultLoading(true);
-        fetch("http://localhost:8080/api/getIdealWeightResult?" + new URLSearchParams({
+        fetch("/api/getIdealWeightResult?" + new URLSearchParams({
             weight: weight,
             height: height,
             gender: gender

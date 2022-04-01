@@ -34,7 +34,7 @@ class Foods extends React.Component {
             foodsLoading: true
         }))
 
-        let url = "http://localhost:8080/api/foods";
+        let url = "/api/foods";
         let response = await fetch(url);
         let data = await response.json();
 
@@ -54,7 +54,7 @@ class Foods extends React.Component {
             foodCategoriesLoading: true
         }))
 
-        let url = "http://localhost:8080/api/getAllFoodCategories";
+        let url = "/api/getAllFoodCategories";
         let response = await fetch(url);
         let data = await response.json();
 

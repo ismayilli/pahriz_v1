@@ -56,7 +56,7 @@ class FoodElementForm extends React.Component {
         }
     }
     async fetchFoodsByName(name) {
-        let url = "http://localhost:8080/api/foods/"+name;
+        let url = "/api/foods/"+name;
         let response = await fetch(url);
         let data = await response.json();
 

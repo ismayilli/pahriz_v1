@@ -29,7 +29,7 @@ class Articles extends React.Component {
         this.fetchArticleCategories();
     }
     async fetchArticles() {
-        let url = "http://localhost:8080/api/articles";
+        let url = "/api/articles";
         let response = await fetch(url);
         let data = await response.json();
 
@@ -46,7 +46,7 @@ class Articles extends React.Component {
         }))
     }
     async fetchArticleCategories() {
-        let url = "http://localhost:8080/api/getAllArticleCategories";
+        let url = "/api/getAllArticleCategories";
         let response = await fetch(url);
         let data = await response.json();
 
