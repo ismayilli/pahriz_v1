@@ -10,7 +10,7 @@ import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 
 public class AWSConfig {
 
-    protected AWSCredentials credentials = new BasicAWSCredentials("AKIAUTBSDRNU73OHMJ5E","vi5zuNtMANy/+XNhSUK78e0AluotCW/7CDQOZ2xz");
+    protected AWSCredentials credentials = new BasicAWSCredentials("access","secret");
 
     public AmazonS3 getS3Client() {
         AmazonS3 s3client = AmazonS3ClientBuilder
